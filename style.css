@@ -1,83 +1,141 @@
-/* فونت نونی و تم دارک */
+/* Google Font نونی */
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
 
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: 'Vazirmatn', sans-serif;
-    background-color: #121212;
-    color: #b5f4a5;
-    direction: rtl;
+    background: linear-gradient(135deg, #1f0c2f, #3b1c4f);
+    color: #e0e0e0;
+    scroll-behavior: smooth;
 }
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(50, 0, 70, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
-header {
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #bda0ff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin-bottom: 40px;
+    padding: 0 20px;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease forwards;
 }
 
-h2 {
-    color: #4cd964;
-    margin-bottom: 15px;
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    max-width: 600px;
+    animation: fadeIn 2s ease 0.5s forwards;
+    opacity: 0;
 }
 
-ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
-
-a {
-    color: #4cd964;
+.btn {
+    padding: 12px 25px;
+    background: rgba(189, 160, 255, 0.6);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+.btn:hover {
+    background: rgba(189, 160, 255, 0.9);
+    transform: scale(1.05);
 }
 
-/* انیمیشن Fade-in */
-.fade-in {
+/* Glass Sections */
+.glass-section {
+    background: rgba(50, 0, 70, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 50px 30px;
+    margin: 80px auto;
+    max-width: 800px;
+    animation: slideUp 1s ease forwards;
     opacity: 0;
-    animation: fadeIn 1s forwards;
 }
 
-.fade-in-delay {
-    opacity: 0;
-    animation: fadeIn 1s forwards 0.5s;
+.glass-section h2 {
+    color: #d3b3ff;
+    margin-bottom: 20px;
+    font-size: 2em;
 }
 
-.fade-in-delay-2 {
-    opacity: 0;
-    animation: fadeIn 1s forwards 1s;
+.glass-section ul {
+    list-style: square;
+    padding-left: 20px;
 }
 
-.fade-in-delay-3 {
-    opacity: 0;
-    animation: fadeIn 1s forwards 1.5s;
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 40px;
 }
 
-.fade-in-delay-4 {
-    opacity: 0;
-    animation: fadeIn 1s forwards 2s;
-}
-
-.fade-in-delay-5 {
-    opacity: 0;
-    animation: fadeIn 1s forwards 2.5s;
-}
-
+/* Animations */
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* وقتی صفحه اسکرول میشه */
+.glass-section.visible {
+    opacity: 1;
+    animation: slideUp 1s ease forwards;
 }
