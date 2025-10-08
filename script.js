@@ -1,12 +1,17 @@
-// یه انیمیشن ساده روی پروژه‌ها وقتی روشون میریم
-const projects = document.querySelectorAll('.projects ul li');
+// انیمیشن وقتی کاربر اسکرول می‌کنه و بخش‌ها دیده میشن
+const sections = document.querySelectorAll('.glass-section');
 
-projects.forEach((proj) => {
-    proj.addEventListener('mouseenter', () => {
-        proj.style.transform = 'scale(1.05)';
-        proj.style.transition = '0.3s';
+function checkSections() {
+    const triggerBottom = window.innerHeight / 5 * 4;
+
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if(sectionTop < triggerBottom){
+            section.classList.add('visible');
+        }
     });
-    proj.addEventListener('mouseleave', () => {
-        proj.style.transform = 'scale(1)';
-    });
-});
+}
+
+window.addEventListener('scroll', checkSections);
+window.addEventListener('load', checkSections);
