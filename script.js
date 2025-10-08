@@ -1,4 +1,17 @@
-// انیمیشن وقتی کاربر اسکرول می‌کنه و بخش‌ها دیده میشن
+// اسکرول نرم برای دکمه‌های ناوبری
+const navLinks = document.querySelectorAll('.nav-links li a');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e){
+        if(this.hash !== "") {
+            e.preventDefault();
+            const target = document.querySelector(this.hash);
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+
+// انیمیشن هنگام اسکرول بخش‌ها
 const sections = document.querySelectorAll('.glass-section');
 
 function checkSections() {
