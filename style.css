@@ -1,21 +1,83 @@
+/* فونت نونی و تم دارک */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Vazirmatn', sans-serif;
+    background-color: #121212;
+    color: #b5f4a5;
     direction: rtl;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
     padding: 20px;
-    background-color: #f0f0f0;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-h1, h2 {
+h1 {
+    font-size: 2.5em;
     margin-bottom: 10px;
+}
+
+h2 {
+    color: #4cd964;
+    margin-bottom: 15px;
 }
 
 ul {
     list-style-type: square;
+    padding-left: 20px;
+}
+
+a {
+    color: #4cd964;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* انیمیشن Fade-in */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.fade-in-delay {
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+.fade-in-delay-2 {
+    opacity: 0;
+    animation: fadeIn 1s forwards 1s;
+}
+
+.fade-in-delay-3 {
+    opacity: 0;
+    animation: fadeIn 1s forwards 1.5s;
+}
+
+.fade-in-delay-4 {
+    opacity: 0;
+    animation: fadeIn 1s forwards 2s;
+}
+
+.fade-in-delay-5 {
+    opacity: 0;
+    animation: fadeIn 1s forwards 2.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
