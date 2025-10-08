@@ -37,18 +37,22 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #bda0ff;
     font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
     transition: 0.3s;
+    box-shadow: 0 0 5px #bda0ff, 0 0 10px #bda0ff, 0 0 20px #bda0ff;
 }
 
 .nav-links li a:hover {
     color: #fff;
+    box-shadow: 0 0 10px #d3b3ff, 0 0 20px #d3b3ff, 0 0 30px #d3b3ff;
     transform: scale(1.1);
 }
 
@@ -102,8 +106,14 @@ body {
     padding: 50px 30px;
     margin: 80px auto;
     max-width: 800px;
-    animation: slideUp 1s ease forwards;
     opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.glass-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .glass-section h2 {
@@ -121,21 +131,4 @@ body {
     text-align: center;
     padding: 20px;
     margin-bottom: 40px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px);}
-    to { opacity: 1; transform: translateY(0);}
-}
-
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(50px);}
-    to { opacity: 1; transform: translateY(0);}
-}
-
-/* وقتی صفحه اسکرول میشه */
-.glass-section.visible {
-    opacity: 1;
-    animation: slideUp 1s ease forwards;
 }
